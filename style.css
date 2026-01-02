@@ -1,75 +1,150 @@
-:root {
-  --text: #111;
-  --muted: #555;
-  --bg: #fafafa;
-  --card: #ffffff;
-  --border: #e7e7e7;
-}
-
+/* Basic page */
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
   line-height: 1.6;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-.site-header {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-}
-
-.title-block h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-.subtitle {
-  margin: 6px 0 0;
-  color: var(--muted);
-}
-
-.nav {
-  margin-top: 14px;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--text);
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  color: #111;
   background: #fff;
 }
 
-.nav a:hover {
-  background: #f0f0f0;
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 24px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 18px 18px;
-  margin: 18px 0;
+/* Two-column layout */
+.profile {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
 }
 
-.card h2 {
-  margin-top: 0;
+/* Photo block */
+.photo {
+  width: 180px;
+  flex: 0 0 180px;
+  margin-top: 110px; /* move photo down to match your example; tweak this */
 }
 
-.site-footer {
-  color: var(--muted);
-  padding: 24px 0 40px;
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Right-side content */
+.content {
+  flex: 1;
+}
+
+/* Name + tagline: move right and down */
+.hero {
+  margin-left: 40px;  /* move right; tweak this */
+  margin-top: 40px;   /* move down; tweak this */
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 560px;
+}
+
+/* About section */
+.about {
+  margin-left: 40px; /* align with hero */
+  max-width: 640px;
+}
+
+.about h2 {
+  margin: 18px 0 10px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.about p {
+  margin: 0 0 12px;
+}
+
+/* Bottom row blocks */
+.links-row {
+  margin-left: 40px; /* align with hero/about */
+  margin-top: 18px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.cv {
+  min-width: 140px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid #111;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: #f2f2f2;
+}
+
+.block {
+  min-width: 180px;
+}
+
+.block h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.block ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.block li {
+  margin: 0 0 6px;
+}
+
+a {
+  color: #111;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Make it responsive on phones */
+@media (max-width: 780px) {
+  .profile {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo {
+    margin-top: 0;
+    width: 160px;
+    flex-basis: auto;
+  }
+
+  .hero, .about, .links-row {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
