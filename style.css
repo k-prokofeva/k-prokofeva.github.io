@@ -18,22 +18,22 @@ body {
 /* Two-column layout */
 .profile {
   display: flex;
-  gap: 56px;
-  align-items: flex-start;
+  align-items: flex-start;   /* top-align photo and text */
+  gap: 48px;                 /* space between photo and text */
 }
 
-/* Photo block */
+/* Photo container */
 .photo {
-  width: 180px;
-  flex: 0 0 180px;
-  margin-top: 110px; /* move photo down to match your example; tweak this */
+  flex: 0 0 160px;           /* fixed column width */
+  margin-top: 80px;          /* moves photo DOWN – adjust freely */
 }
 
+/* Actual image */
 .photo img {
-  width: 100%;
-  height: auto;
+  width: 160px;              /* explicit size */
+  height: auto;              /* keep proportions */
   display: block;
-  border-radius: 6px;
+  border-radius: 6px;        /* optional */
 }
 
 /* Right-side content */
